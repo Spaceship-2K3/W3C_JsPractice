@@ -28,9 +28,9 @@ function getDate() {
     let second = new Date().getSeconds();
     let ampm = hour > 12 ? "PM" : "AM";
     dayEle.innerHTML = day;
-    hoursEle.innerHTML = hour;
-    minutesEle.innerHTML = minutes;
-    secondEle.innerHTML = second;
+    hoursEle.innerHTML = hour > 10 ? hour : `0${hour}`;
+    minutesEle.innerHTML = minutes > 10 ? minutes : `0${minutes}`;
+    secondEle.innerHTML = second > 10 ? second : `0${second}`;
     ampmEle.innerHTML = ampm;
     setTimeout(() => {
         getDate();
